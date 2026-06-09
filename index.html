@@ -1,163 +1,354 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Bella Portfolio</title>
 
   <style>
+    :root {
+      --text: #222;
+      --muted: #666;
+      --link: #1a5fb4;
+      --border: #e5e5e5;
+      --bg: #ffffff;
+      --soft-bg: #f7f7f7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
       line-height: 1.6;
-      padding: 20px;
-      background-color: #f9f9f9;
     }
 
-    h1, h2 {
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 48px;
+    }
+
+    .sidebar {
       text-align: center;
+      position: sticky;
+      top: 32px;
+      align-self: start;
     }
 
-    .profile {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .profile img {
-      width: 150px;
-      height: 150px;
+    .profile-img {
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .subtitle {
-      color: gray;
-      margin-top: -10px;
-    }
-
-    .project {
-      background: white;
-      padding: 15px;
       margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border: 1px solid var(--border);
     }
 
-    .project img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
+    .name {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 8px 0 4px;
     }
 
-    .btn {
+    .title {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .affiliation {
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .links {
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .links a {
+      margin: 0 5px;
+      white-space: nowrap;
+    }
+
+    .content {
+      max-width: 780px;
+    }
+
+    nav {
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+
+    nav a {
+      margin-right: 20px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 46px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 0 0 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 0 0 4px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .tag-list {
+      margin-top: 12px;
+    }
+
+    .tag {
       display: inline-block;
-      margin-top: 10px;
-      padding: 8px 12px;
-      background: black;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
+      background: var(--soft-bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin: 4px 4px 4px 0;
+      font-size: 13px;
+      color: #333;
     }
 
-    .btn:hover {
-      background: #333;
+    .item {
+      margin-bottom: 30px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .project-title {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .tech {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .project-links {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .project-links a {
+      margin-right: 10px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 28px 18px;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px 10px;
+      }
+
+      .item-header {
+        display: block;
+      }
+
+      .meta {
+        white-space: normal;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="container">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <img src="assets/images/profile.jpg" alt="Bella Profile" class="profile-img" />
+      <div class="name">Bella He</div>
+      <div class="title">AI Native Architect | Machine Learning Engineer | Data Scientist</div>
+      <div class="affiliation">
+        M.S. Computer Science<br />
+        University of Chicago
+       </div>
+       <div class="links">
+        <a href="mailto:bellahe@uchicago.edu">Email</a>
+        <a href="https://github.com/belsguidetotech">GitHub</a>
+        <a href="https://www.linkedin.com/in/bella-h-63b15a2a8/">LinkedIn</a>
+        <a href="assets/QianqianHe_CV.pdf">Resume</a>
+       </div>
+    </aside>
+    <!-- Main Content -->
+    <main class="content">
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#assets/QianqianHe_CV.pdf">Resume</a>
+      </nav>
+      <!-- About -->
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          I am a graduate student in Computer Science at the University of Chicago,
+          focusing on distributed Multi-agent systems, NLP, LLMs,and data science.
+        </p>
 
-<!-- Profile Section -->
-<div class="profile">
-  <img src="assets/images/profile.jpg" alt="Bella Profile">
-  <h1>Bella He</h1>
-  <p class="subtitle">AI / Machine Learning Engineer | Data Scientist</p>
-</div>
+        <p>
+          My work spans multi-agent systems, retrieval-augmented generation, reinforcement learning,
+          portfolio intelligence, high-performance machine learning systems, energy forecasting,
+          and distributed simulation plaforms.
+        </p>
 
-<p style="text-align:center;">
-  Take a look at my projects below. Feel free to connect and share feedback!
-</p>
+        <p>
+          I am interested in building reliable AI systems that combine machine learning, software
+          engineering, agentic workflows, decision intelligence, and scalable infrastructure.
+        </p>
 
-<!-- Project 1 -->
-<div class="project">
-  <h2>⚡ Energy Management System</h2>
-  <p>Energy load prediction and dispatch optimization using CNN-LSTM, CPLEX optimizer, and reinforcement learning.</p>
-  <a class="btn" href="https://belsguidetotech.github.io/Energy_Management_System_for_Prediction_and_Optimization">
-    👉 View Project
-  </a>
-</div>
+        <div class="tag-list">
+          <span class="tag">Multi-agent</span>
+          <span class="tag">LLMs</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Reinforcement Learning</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Distributed Systems</span>
+          <span class="tag">Data Science</span>
+          <span class="tag">High Performance Computing</span>
+          <span class="tag">MLOps</span>
+        </div>
+      </section>
 
-<!-- Project 2 -->
-<div class="project">
-  <h2>🚚 Supply Chain Agentic System</h2>
-  <p>End-to-end supply chain optimization using LangChain and RAG.</p>
-  <a class="btn" href="https://belsguidetotech.github.io/Supply_Chain_Optimization_Agentic_System">
-    👉 View Project
-  </a>
-</div>
+      <!-- Projects -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="item">
+          <div class="item-header">
+            <div class="project-title">Multi-Agent Deep Research System</div>
+            <div class="meta">AI Research System</div>
+          </div>
+          <div class="tech">LangChain, MCP, LLMs, Reinforcement Learning</div>
+          <ul>
+            <li>
+              Designed and implemented a stateful multi-agent system that automates literature retrieval,
+              experiment generation, execution, and report synthesis for scientific discovery workflows.
+            </li>
+            <li>
+              Integrated foundation models, tool calling, retrieval systems, and working-memory architectures
+              to improve reasoning quality and agent coordination.
+            </li>
+            <li>
+              Applied Active Representation Learning and Reinforcement Learning to optimize experiment selection
+              and execution efficiency.
+            </li>
+            <li>
+              Developed human-in-the-loop verification workflows and interactive interfaces to improve usability,
+              reproducibility, and scientific research validation.
+            </li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="item-header">
+            <div class="project-title">LLM-Driven Portfolio Management System</div>
+            <div class="meta">AI Finance Platform</div>
+          </div>
+          <div class="tech">Java, Object-Oriented Design, ActiveMQ, Apache Camel, LangChain</div>
+          <ul>
+            <li>
+              Designed and implemented a portfolio management platform supporting portfolio 
+              construction, transaction processing, risk analysis, and performance evaluation.
+            </li>
+            <li>
+              Built event-driven market data, transaction, recommendation, and portfolio management
+              services using ActiveMQ and Apache Camel.
+            </li>
+            <li>
+              Integrated LLM-powered recommendation and portfolio rebalancing workflows using LangChain
+              and MCP based on portfolio performance, market conditions, and investor risk profiles.
+            </li>
+            <li>
+              Automated investment analysis and decision-support workflows through agentic orchestration 
+              and tool-calling architectures.
+            </li>            
+          </ul>
+        </div>
 
-<!-- Project 3 -->
-<div class="project">
-  <h2>🎯 Multimodal Recommendation System</h2>
-  <p>LLM-driven system integrating text, image, audio, and video for personalized recommendations.</p>
-  <a class="btn" href="https://belsguidetotech.github.io/LLM-driven_Multimodal_Recommendation_System">
-    👉 View Project
-  </a>
-</div>
+      </section>
+      
+      <footer>
+        © 2026 Bella He
+      </footer>
 
-<!-- Project 4 -->
-<div class="project">
-  <h2>📊 Automated Sales Analytics Platform</h2>
-  <p>Automated analytics and dashboard system using NLP, GenAI, and ML.</p>
-  <a class="btn" href="https://belsguidetotech.github.io/Automated_Sales_Analytics_Platform">
-    👉 View Project
-  </a>
-</div>
-
-<!-- Project 5 -->
-<div class="project">
-  <h2>⚙️ AIOps Platform</h2>
-  <p>Real-time infrastructure monitoring using ML and time-series forecasting.</p>
-  <a class="btn" href="https://belsguidetotech.github.io/AIOps_Platform_for_Data_Center">
-    👉 View Project
-  </a>
-</div>
-
-<!-- Project 6 -->
-<div class="project">
-  <h2>🤖 AI and Big Data Developer Platform</h2>
-  <p>One stop AI development and research platform for developers using ML and software engineering.</p>
-  <a class="btn" href="https://belsguidetotech.github.io/AI_and_Big_Data_Developer_Platform">
-    👉 View Project
-  </a>
-</div>
-  
-<!-- Project 7 -->
-<div class="project">
-  <h2>🔍 Agentic Vision System</h2>
-  <p>3D-to-2D rendering pipeline with LangChain and RAG for large-scale vision tasks.</p>
-  <a class="btn" href="https://belsguidetotech.github.io/High-Performance_Agentic_Vision_System_for_Large_Scale_3D_Dataset">
-    👉 View Project
-  </a>
-</div>
-
-<!-- Project 8 -->
-<div class="project">
-  <h2>🔌 Explainable AI for Energy Forecast</h2>
-  <p>Energy forecasting with ML and SHAP for feature-level interpretability.</p>
-  <a class="btn" href="https://belsguidetotech.github.io/Explainable_AI_for_Reliable_Energy_Consumption_Forecast">
-    👉 View Project
-  </a>
-</div>
-
-<!-- Project 9 -->
-<div class="project">
-  <h2>🩺 Breast Cancer Detection</h2>
-  <p>CNN-based medical image classification with data augmentation and regularization.</p>
-  <a class="btn" href="https://belsguidetotech.github.io/Breast_Cancer_Detection_with_Data_Augmentation">
-    👉 View Project
-  </a>
-</div>
-
+    </main>
+  </div>
 </body>
 </html>
