@@ -3,500 +3,410 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Qianqian (Bella) He — AI/ML engineer, data scientist, and product-minded builder focused on production AI systems, LLM/agentic workflows, scalable data platforms, and decision intelligence." />
-  <title>Qianqian (Bella) He | AI/ML Engineer</title>
+  <meta name="description" content="Qianqian (Bella) He — University of Chicago M.S. Computer Science candidate building production AI systems, ML infrastructure, data platforms, and agentic workflows." />
+  <title>Qianqian (Bella) He</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: #121a2e;
-      --panel-soft: #17213a;
-      --text: #eef3ff;
-      --muted: #a9b5d1;
-      --line: rgba(255,255,255,0.12);
-      --accent: #7dd3fc;
-      --accent-2: #c4b5fd;
-      --chip: rgba(125,211,252,0.12);
-      --shadow: 0 20px 60px rgba(0,0,0,0.28);
-      --radius: 22px;
+      --bg: #ffffff;
+      --text: #222222;
+      --muted: #666666;
+      --soft: #f7f7f7;
+      --line: #e6e6e6;
+      --accent: #2563eb;
+      --accent-soft: #eef4ff;
+      --max-width: 980px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(125,211,252,0.18), transparent 32rem),
-        radial-gradient(circle at 85% 8%, rgba(196,181,253,0.16), transparent 28rem),
-        var(--bg);
+      background: var(--bg);
       color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
     }
 
-    a { color: inherit; text-decoration: none; }
-    a:hover { color: var(--accent); }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-    .container {
-      width: min(1120px, calc(100% - 40px));
+    a:hover { text-decoration: underline; }
+
+    .page {
+      width: min(var(--max-width), calc(100% - 36px));
       margin: 0 auto;
+      padding: 48px 0 56px;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(18px);
-      background: rgba(11,16,32,0.78);
+    .intro {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 36px;
+      align-items: center;
+      padding-bottom: 28px;
       border-bottom: 1px solid var(--line);
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 2.15rem;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin: 0 0 3px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .headline {
+      margin: 18px 0 0;
+      max-width: 720px;
+      color: #333333;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 16px;
+      margin-top: 14px;
+      font-size: 0.95rem;
     }
 
     .nav {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0;
-      gap: 18px;
-    }
-
-    .brand {
-      font-weight: 750;
-      letter-spacing: -0.03em;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 0.94rem;
-      color: var(--muted);
       flex-wrap: wrap;
-      justify-content: flex-end;
+      gap: 14px 22px;
+      margin: 22px 0 0;
+      font-size: 0.95rem;
     }
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 10px 16px;
-      color: var(--text);
-      background: rgba(255,255,255,0.04);
-      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
-    }
+    .nav a { color: #333333; }
+    .nav a:hover { color: var(--accent); }
 
-    .button:hover {
-      transform: translateY(-1px);
-      background: rgba(125,211,252,0.12);
-      border-color: rgba(125,211,252,0.45);
-      color: var(--text);
-    }
-
-    .button.primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #07111f;
-      border: none;
-      font-weight: 700;
-    }
-
-    .hero {
-      padding: 86px 0 54px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 34px;
-      align-items: stretch;
-    }
-
-    .eyebrow {
-      color: var(--accent);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(2.7rem, 7vw, 5.7rem);
-      line-height: 0.94;
-      letter-spacing: -0.07em;
-      margin: 0 0 22px;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: clamp(1.05rem, 2vw, 1.24rem);
-      max-width: 760px;
-      margin: 0 0 26px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .scorecard {
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: var(--shadow);
-    }
-
-    .metric {
-      padding: 18px 0;
+    section {
+      padding: 30px 0;
       border-bottom: 1px solid var(--line);
     }
 
-    .metric:last-child { border-bottom: 0; padding-bottom: 0; }
-    .metric:first-child { padding-top: 0; }
+    section:last-of-type { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.03rem;
+      line-height: 1.35;
+    }
+
+    .section-note {
+      margin: -6px 0 18px;
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 9px;
+      background: var(--soft);
+      color: #444444;
+      font-size: 0.86rem;
+      line-height: 1.35;
+    }
+
+    .item {
+      padding: 17px 0;
+    }
+
+    .item:first-of-type { padding-top: 0; }
+    .item + .item { border-top: 1px solid var(--line); }
+
+    .item-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .role-line {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 1px;
+    }
+
+    p { margin: 8px 0 0; }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 19px;
+    }
+
+    li + li { margin-top: 4px; }
+
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px 24px;
+    }
+
+    .project {
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .project:nth-child(1), .project:nth-child(2) { border-top: 0; padding-top: 0; }
+
+    .project p {
+      color: #444444;
+      font-size: 0.96rem;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .metric {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 13px 14px;
+    }
 
     .metric strong {
       display: block;
-      font-size: 1.55rem;
-      letter-spacing: -0.04em;
+      font-size: 1.1rem;
+      line-height: 1.2;
     }
 
     .metric span {
+      display: block;
       color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    section { padding: 58px 0; }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 20px;
-      margin-bottom: 26px;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-    }
-
-    .section-heading p {
-      max-width: 560px;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.055);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
-    }
-
-    .span-4 { grid-column: span 4; }
-    .span-6 { grid-column: span 6; }
-    .span-8 { grid-column: span 8; }
-    .span-12 { grid-column: span 12; }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 1.15rem;
-      letter-spacing: -0.025em;
-    }
-
-    .card p, .card li { color: var(--muted); }
-    .card p { margin: 0; }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
-    }
-
-    .chip {
-      border: 1px solid rgba(125,211,252,0.22);
-      background: var(--chip);
-      color: #dff7ff;
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 0.83rem;
-    }
-
-    .role-card {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .role-card .role {
-      color: var(--accent);
       font-size: 0.88rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      margin-top: 3px;
     }
 
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
-
-    .timeline-item {
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(255,255,255,0.035);
-    }
-
-    .timeline-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 8px;
-    }
-
-    .timeline-top strong { letter-spacing: -0.02em; }
-    .timeline-top span { color: var(--muted); font-size: 0.92rem; }
-
-    ul {
-      margin: 12px 0 0;
-      padding-left: 18px;
-    }
-
-    li + li { margin-top: 8px; }
-
-    .footer {
-      padding: 40px 0 54px;
-      border-top: 1px solid var(--line);
+    footer {
+      margin-top: 22px;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
-    .footer .container {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 850px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .span-4, .span-6, .span-8 { grid-column: span 12; }
-      .section-heading { align-items: flex-start; flex-direction: column; }
-      .nav { align-items: flex-start; flex-direction: column; }
-      .nav-links { justify-content: flex-start; }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 28px, var(--max-width)); padding-top: 30px; }
+      .intro { grid-template-columns: 1fr; gap: 18px; text-align: left; }
+      .profile-photo { width: 150px; height: 150px; }
+      .compact-grid, .metrics { grid-template-columns: 1fr; }
+      .project:nth-child(2) { border-top: 1px solid var(--line); padding-top: 14px; }
+      .item-top { flex-direction: column; gap: 2px; }
+      .meta { white-space: normal; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="container nav" aria-label="Primary navigation">
-      <a class="brand" href="#top">Qianqian (Bella) He</a>
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#projects">Projects</a>
-        <a href="#research">Research</a>
-        <a href="#experience">Experience</a>
-        <a href="assets/QianqianHe_Industry_Resume.pdf" class="button" target="_blank" rel="noopener">Resume</a>
+  <main class="page">
+    <header class="intro">
+      <img class="profile-photo" src="assets/images/profile.jpg" alt="Bella Profile" />
+      <div>
+        <h1>Qianqian (Bella) He</h1>
+        <p class="subtitle">M.S. Computer Science, University of Chicago</p>
+        <p class="subtitle">Machine Learning Engineer · AI Engineer · Data Scientist · Product-minded Builder</p>
+        <div class="links">
+          <a href="mailto:bellanddnalleb@gmail.com">Email</a>
+          <a href="https://github.com/belsguidetotech" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/bella-h-63b15a2a8/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="assets/QianqianHe_Industry_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#research">Research</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+        </nav>
       </div>
-    </nav>
-  </header>
+    </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">AI/ML Engineer · Data Scientist · Product-minded Builder</div>
-          <h1>Building AI systems from data to deployment.</h1>
-          <p>
-            I am a University of Chicago M.S. Computer Science candidate with 3+ years of experience building production AI/ML systems, LLM and agentic workflows, scalable data platforms, and decision-intelligence products across Trina Solar, L'Oréal, AISHU, and Alibaba.
-          </p>
-          <p>
-            My work connects ML engineering, distributed systems, data science, and product execution — with research experience in agent evaluation, human-in-the-loop AI, and GPU-aware ML infrastructure.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="mailto:bellanddnalleb@gmail.com">Contact me</a>
-            <a class="button" href="https://github.com/belsguidetotech" target="_blank" rel="noopener">GitHub</a>
-            <a class="button" href="https://www.linkedin.com/in/bella-h-63b15a2a8/" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-
-        <aside class="scorecard" aria-label="Career highlights">
-          <div class="metric">
-            <strong>$8M+</strong>
-            <span>Annual savings supported through AI-driven supply-chain and energy optimization systems.</span>
-          </div>
-          <div class="metric">
-            <strong>10M+</strong>
-            <span>Multimodal customer, product, media, and interaction records used for recommendation and analytics systems.</span>
-          </div>
-          <div class="metric">
-            <strong>2M+</strong>
-            <span>Hourly time-series records modeled for forecasting, optimization, and adaptive energy dispatch.</span>
-          </div>
-          <div class="metric">
-            <strong>4 tracks</strong>
-            <span>ML engineering, AI infrastructure, data science, and product/platform execution.</span>
-          </div>
-        </aside>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I build AI systems that connect machine learning, data infrastructure, distributed systems, and product execution. My industry work spans production LLM/agentic workflows, recommendation systems, forecasting, optimization, analytics automation, and AI platform development across Trina Solar, L'Oréal, AISHU, and Alibaba.
+      </p>
+      <p>
+        My research work focuses on LLM/agent evaluation, safety-oriented AI systems, human-in-the-loop workflows, and AI infrastructure for long-horizon research. I am especially interested in reliable AI systems that can be evaluated, deployed, and improved in real-world environments.
+      </p>
+      <div class="metrics" aria-label="Selected metrics">
+        <div class="metric"><strong>10M+</strong><span>multimodal records for recommendation and analytics systems</span></div>
+        <div class="metric"><strong>2M+</strong><span>hourly time-series records for forecasting and optimization</span></div>
+        <div class="metric"><strong>$8M+</strong><span>annual savings supported by AI-driven decision systems</span></div>
       </div>
-    </section>
-
-    <section id="work">
-      <div class="container">
-        <div class="section-heading">
-          <h2>What I build</h2>
-          <p>Industry-ready AI systems with a research-aware engineering foundation.</p>
-        </div>
-        <div class="grid">
-          <article class="card span-4 role-card">
-            <div class="role">Machine Learning Engineering</div>
-            <h3>Production ML and evaluation pipelines</h3>
-            <p>Forecasting, recommendation, ranking, model evaluation, experiment design, and MLOps workflows that translate data into measurable product and business outcomes.</p>
-            <div class="chips"><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Scikit-learn</span><span class="chip">MLOps</span></div>
-          </article>
-          <article class="card span-4 role-card">
-            <div class="role">AI Engineering</div>
-            <h3>LLM and agentic workflows</h3>
-            <p>LLM/RAG systems, agent orchestration, tool use, evaluation harnesses, and human-in-the-loop workflows for decision support, research automation, and analytics.</p>
-            <div class="chips"><span class="chip">LLMs</span><span class="chip">RAG</span><span class="chip">LangChain</span><span class="chip">FastAPI</span></div>
-          </article>
-          <article class="card span-4 role-card">
-            <div class="role">Software + Data Platforms</div>
-            <h3>Scalable infrastructure for AI products</h3>
-            <p>Data pipelines, APIs, distributed services, observability, and backend workflows built for reliability, reproducibility, and cross-functional delivery.</p>
-            <div class="chips"><span class="chip">Python</span><span class="chip">C++</span><span class="chip">Java</span><span class="chip">SQL</span><span class="chip">Docker</span></div>
-          </article>
-        </div>
+      <div class="tags">
+        <span class="tag">LLMs</span><span class="tag">Agentic AI</span><span class="tag">ML Engineering</span><span class="tag">Data Infrastructure</span><span class="tag">Distributed Systems</span><span class="tag">Evaluation</span><span class="tag">Optimization</span>
       </div>
     </section>
 
     <section id="projects">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Selected projects</h2>
-          <p>A focused set of projects aligned with MLE, AI engineer, data scientist, software engineer, ML researcher, and product roles.</p>
-        </div>
-        <div class="grid">
-          <article class="card span-6">
-            <h3>AI Agent Safety Evaluation</h3>
-            <p>Designed a safety evaluation workflow for tool-using agents, modeling prompts, tool calls, observations, file/API actions, and policy outcomes as reproducible traces for failure analysis.</p>
-            <div class="chips"><span class="chip">Python</span><span class="chip">LangChain</span><span class="chip">Evaluation Harness</span><span class="chip">Agent Traces</span></div>
-          </article>
-          <article class="card span-6">
-            <h3>AI Infrastructure & GPU Inference Optimization</h3>
-            <p>Implemented a high-performance inference and model-evaluation pipeline with ONNX graph generation, batching, parallel data loading, CUDA-aware profiling, and reproducible run artifacts.</p>
-            <div class="chips"><span class="chip">C++</span><span class="chip">CUDA</span><span class="chip">PyTorch</span><span class="chip">ONNX</span></div>
-          </article>
-          <article class="card span-6">
-            <h3>Academic Paper Intelligence Pipeline</h3>
-            <p>Built an agentic research-data infrastructure prototype that ingests OpenAlex/arXiv metadata, preserves raw responses, normalizes records, extracts research questions, and monitors pipeline health.</p>
-            <div class="chips"><span class="chip">LangGraph</span><span class="chip">SQLite</span><span class="chip">FastAPI</span><span class="chip">Grafana</span></div>
-          </article>
-          <article class="card span-6">
-            <h3>Calibrated Sports Forecasting</h3>
-            <p>Built a probabilistic sports forecasting pipeline combining historical performance, team strength, recent form, matchup context, and market-implied signals; evaluated forecasts with calibration-focused metrics.</p>
-            <div class="chips"><span class="chip">PyTorch</span><span class="chip">Scikit-learn</span><span class="chip">Brier Score</span><span class="chip">Log Loss</span></div>
-          </article>
-          <article class="card span-6">
-            <h3>LLM-Driven Portfolio Management System</h3>
-            <p>Built event-driven portfolio services and LLM-powered rebalancing workflows for portfolio construction, risk evaluation, transaction processing, and market-aware decision support.</p>
-            <div class="chips"><span class="chip">Java</span><span class="chip">ActiveMQ</span><span class="chip">Apache Camel</span><span class="chip">LLM Workflows</span></div>
-          </article>
-          <article class="card span-6">
-            <h3>Interactive Energy Harvest Simulation Platform</h3>
-            <p>Developed a distributed simulation platform with REST APIs, authentication, encrypted communication, resilient service coordination, and hybrid state management for energy stabilization workflows.</p>
-            <div class="chips"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Distributed Systems</span></div>
-          </article>
-        </div>
+      <h2>Selected Projects</h2>
+      <p class="section-note">Industry-facing projects aligned with MLE, AI engineer, data scientist, software engineer, ML researcher, and product roles.</p>
+      <div class="compact-grid">
+        <article class="project">
+          <h3>AI Agent Safety Evaluation</h3>
+          <p>Designed a safety evaluation workflow for tool-using agents, modeling prompts, tool calls, observations, file/API actions, and policy outcomes as reproducible traces for failure analysis.</p>
+        </article>
+        <article class="project">
+          <h3>AI Infrastructure & GPU Inference Optimization</h3>
+          <p>Implemented a high-performance model-evaluation pipeline with ONNX graph generation, batched preprocessing, parallel loading, CUDA-aware profiling, and reproducible run artifacts.</p>
+        </article>
+        <article class="project">
+          <h3>Academic Paper Intelligence Pipeline</h3>
+          <p>Built an agentic research-data infrastructure prototype that ingests OpenAlex/arXiv metadata, preserves raw responses, normalizes records, extracts research questions, and monitors pipeline health.</p>
+        </article>
+        <article class="project">
+          <h3>Calibrated Sports Forecasting</h3>
+          <p>Built a probabilistic forecasting pipeline using historical performance, team strength, recent form, matchup context, and market-implied signals; evaluated forecasts with calibration-focused metrics.</p>
+        </article>
+        <article class="project">
+          <h3>LLM-Driven Portfolio Management System</h3>
+          <p>Built event-driven portfolio services and LLM-powered rebalancing workflows for portfolio construction, risk evaluation, transaction processing, and market-aware decision support.</p>
+        </article>
+        <article class="project">
+          <h3>Interactive Energy Harvest Simulation Platform</h3>
+          <p>Developed a distributed simulation platform with REST APIs, authentication, encrypted communication, resilient service coordination, and hybrid state management.</p>
+        </article>
       </div>
     </section>
 
     <section id="research">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Research foundation</h2>
-          <p>Research experience that strengthens my industry work in evaluation, reliability, interpretability, and long-horizon AI systems.</p>
-        </div>
-        <div class="grid">
-          <article class="card span-6">
+      <h2>Research</h2>
+      <article class="item">
+        <div class="item-top">
+          <div>
             <h3>Multi-agent long-horizon AI research</h3>
-            <p>Building data and annotation infrastructure for multi-agent research, including trajectory visualization, canonical event schemas, benchmark labels, and human-in-the-loop verification workflows.</p>
-          </article>
-          <article class="card span-6">
-            <h3>Reinforcement learning for experiment design</h3>
-            <p>Targeting NeurIPS 2026 Workshop: adaptive representation learning, RL decision policies, consensus optimization, and state management for multi-agent scientific workflows.</p>
-          </article>
-          <article class="card span-6">
-            <h3>Explainable energy forecasting</h3>
-            <p>Accepted at EIECT 2024: XGBoost energy-consumption forecasting with best MSE of 0.0017 and SHAP-based feature attribution for governance and interpretability.</p>
-          </article>
-          <article class="card span-6">
-            <h3>Medical image classification</h3>
-            <p>Developed CNN-based classification workflows with augmentation, regularization, visualization dashboards, and interpretability analysis; achieved 0.921 precision.</p>
-          </article>
+            <div class="role-line">UChicago Data Science Institute · Research Intern, Prof. Chenhao Tan</div>
+          </div>
+          <div class="meta">June 2026 – Present</div>
         </div>
-      </div>
+        <p>Building data and annotation infrastructure for multi-agent AI research, including trajectory visualization, canonical event schemas, benchmark labels, and human-in-the-loop verification workflows.</p>
+      </article>
+      <article class="item">
+        <div class="item-top">
+          <div>
+            <h3>Reinforcement Learning for Experiment Design in Multi-Agent Scientific Discovery</h3>
+            <div class="role-line">Target: NeurIPS 2026 Workshop</div>
+          </div>
+        </div>
+        <p>Developing adaptive representation learning methods, RL decision policies, consensus optimization, and state-management mechanisms for multi-agent scientific workflows.</p>
+      </article>
+      <article class="item">
+        <div class="item-top">
+          <div>
+            <h3>Explainable AI for Reliable Energy Consumption Forecast</h3>
+            <div class="role-line">Accepted at EIECT 2024</div>
+          </div>
+        </div>
+        <p>Built energy-consumption forecasting models with XGBoost and SHAP-based feature attribution for interpretability, governance, and model reliability.</p>
+      </article>
     </section>
 
     <section id="experience">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Experience</h2>
-          <p>Cross-functional delivery across AI systems, data platforms, and product execution.</p>
+      <h2>Experience</h2>
+      <article class="item">
+        <div class="item-top">
+          <div>
+            <h3>Data Scientist · Trina Solar</h3>
+            <div class="role-line">LLM workflows · Forecasting · Optimization · Energy systems</div>
+          </div>
+          <div class="meta">Jan 2024 – Aug 2025</div>
         </div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-top"><strong>Data Scientist · Trina Solar</strong><span>Jan 2024 – Aug 2025</span></div>
-            <ul>
-              <li>Built agentic decision systems, forecasting pipelines, and optimization workflows for procurement, logistics, inventory planning, and energy dispatch.</li>
-              <li>Delivered $6.65M in annual supply-chain savings and $1.53M in annual energy-management savings through ML-driven decision support.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-top"><strong>Data Analytics & Governance Manager · L'Oréal</strong><span>Nov 2022 – Dec 2023</span></div>
-            <ul>
-              <li>Optimized multimodal recommendation and ranking systems over 10M+ records, improving relevance and user satisfaction by 13%.</li>
-              <li>Built GenAI analytics workflows for ETL automation, natural-language querying, predictive analytics, and management reporting.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-top"><strong>Product Manager · AISHU Technology</strong><span>Aug 2021 – Oct 2022</span></div>
-            <ul>
-              <li>Led AIOps platform development for anomaly detection, failure prediction, monitoring, and root-cause analysis across distributed infrastructure.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-top"><strong>Product Manager · Alibaba</strong><span>May 2020 – Jul 2021</span></div>
-            <ul>
-              <li>Managed AI platform features across user analytics, open-source datasets, rapid prototyping, model deployment, and developer experience.</li>
-            </ul>
-          </article>
+        <ul>
+          <li>Built agentic decision systems, forecasting pipelines, and optimization workflows for procurement, supplier selection, logistics, inventory planning, and energy dispatch.</li>
+          <li>Delivered $6.65M in annual supply-chain savings and $1.53M in annual energy-management savings through ML-driven decision support.</li>
+        </ul>
+      </article>
+      <article class="item">
+        <div class="item-top">
+          <div>
+            <h3>Data Analytics & Governance Manager · L'Oréal</h3>
+            <div class="role-line">Recommendation systems · Multimodal AI · Data engineering · Analytics automation</div>
+          </div>
+          <div class="meta">Nov 2022 – Dec 2023</div>
         </div>
-      </div>
+        <ul>
+          <li>Optimized multimodal recommendation and ranking systems over 10M+ records, improving relevance and user satisfaction by 13%.</li>
+          <li>Built GenAI analytics workflows for ETL automation, natural-language querying, predictive analytics, dashboard generation, and management reporting.</li>
+        </ul>
+      </article>
+      <article class="item">
+        <div class="item-top">
+          <div>
+            <h3>Product Manager · AISHU Technology</h3>
+            <div class="role-line">AIOps · Monitoring · Distributed infrastructure · Product execution</div>
+          </div>
+          <div class="meta">Aug 2021 – Oct 2022</div>
+        </div>
+        <p>Led AIOps platform development for anomaly detection, failure prediction, infrastructure monitoring, and root-cause analysis across distributed data center environments.</p>
+      </article>
+      <article class="item">
+        <div class="item-top">
+          <div>
+            <h3>Product Manager · Alibaba</h3>
+            <div class="role-line">AI platforms · Big data · Model deployment · Developer experience</div>
+          </div>
+          <div class="meta">May 2020 – July 2021</div>
+        </div>
+        <p>Managed AI platform feature development across user analytics, open-source datasets, rapid prototyping, model deployment, and platform adoption workflows.</p>
+      </article>
     </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container">
-      <span>© 2026 Qianqian (Bella) He</span>
-      <span><a href="mailto:bellanddnalleb@gmail.com">bellanddnalleb@gmail.com</a> · <a href="https://github.com/belsguidetotech" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/bella-h-63b15a2a8/" target="_blank" rel="noopener">LinkedIn</a></span>
-    </div>
-  </footer>
+    <section id="skills">
+      <h2>Skills</h2>
+      <p><strong>AI/ML:</strong> LLMs, agentic AI, RAG, reinforcement learning, NLP, computer vision, ML evaluation, safety evaluation, MLOps.</p>
+      <p><strong>Engineering:</strong> Python, C++, Java, SQL, JavaScript, R, PyTorch, TensorFlow, CUDA, Docker, Kubernetes, FastAPI, distributed systems, APIs.</p>
+      <p><strong>Data/Product:</strong> data engineering, databases, Spark, statistical modeling, algorithm design, optimization, product analytics, roadmap execution, stakeholder communication.</p>
+    </section>
+
+    <footer>
+      © 2026 Qianqian (Bella) He · <a href="mailto:bellanddnalleb@gmail.com">bellanddnalleb@gmail.com</a>
+    </footer>
+  </main>
 </body>
 </html>
