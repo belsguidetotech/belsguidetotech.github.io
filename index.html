@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Qianqian (Bella) He — University of Chicago M.S. Computer Science candidate focused on ML engineering, LLM systems, multi-agent systems, and data infrastructure." />
+  <meta name="description" content="Qianqian (Bella) He — University of Chicago M.S. Computer Science candidate focused on LLM, multi-agent systems, ML evaluation, human-AI interaction, data infrastructure, and GPU-aware ML infrastructure." />
   <title>Qianqian (Bella) He</title>
   <style>
     :root {
-      --text: #222;
-      --muted: #666;
-      --faint: #888;
-      --line: #e5e5e5;
-      --soft: #f7f7f7;
-      --link: #1f5fbf;
-      --side: 248px;
-      --content: 700px;
+      --text: #252525;
+      --body: #555;
+      --muted: #888;
+      --line: #e8e8e8;
+      --soft: #f6f6f6;
+      --link: #2166c2;
+      --sidebar: 250px;
+      --content: 720px;
+      --gap: 54px;
     }
 
     * { box-sizing: border-box; }
@@ -24,10 +25,11 @@
       margin: 0;
       background: #fff;
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
       font-size: 14px;
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     a { color: var(--link); text-decoration: none; }
@@ -35,60 +37,56 @@
 
     .page {
       display: grid;
-      grid-template-columns: var(--side) minmax(0, var(--content));
-      gap: 44px;
-      max-width: calc(var(--side) + var(--content) + 44px);
-      min-height: 100vh;
+      grid-template-columns: var(--sidebar) minmax(0, var(--content));
+      column-gap: var(--gap);
+      max-width: calc(var(--sidebar) + var(--content) + var(--gap));
       margin: 0 auto;
-      padding: 36px 24px;
+      padding: 42px 24px 52px;
+      align-items: start;
     }
 
     .sidebar {
       position: sticky;
-      top: 36px;
+      top: 42px;
       align-self: start;
-      height: calc(100vh - 72px);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
+      min-height: calc(100vh - 84px);
     }
 
     .photo {
       width: 154px;
       height: 154px;
-      object-fit: cover;
       border-radius: 50%;
+      object-fit: cover;
       display: block;
       background: var(--soft);
-      margin-bottom: 20px;
+      margin: 0 0 20px;
     }
 
     h1 {
-      margin: 0 0 6px;
-      font-size: 24px;
+      margin: 0 0 5px;
+      font-size: 22px;
       line-height: 1.15;
-      font-weight: 600;
-      letter-spacing: -0.015em;
+      font-weight: 650;
+      letter-spacing: -0.02em;
     }
 
     .role {
       margin: 0 0 2px;
-      color: #333;
       font-size: 14px;
-      line-height: 1.4;
+      color: #333;
     }
 
     .school {
       margin: 0 0 22px;
-      color: var(--muted);
       font-size: 13px;
+      color: var(--muted);
     }
 
     .links {
       display: flex;
       flex-wrap: wrap;
       gap: 8px 14px;
-      margin: 0 0 24px;
+      margin: 0 0 26px;
       font-size: 13px;
     }
 
@@ -98,89 +96,91 @@
       border-top: 1px solid var(--line);
       padding-top: 18px;
       display: grid;
-      gap: 8px;
+      gap: 10px;
       font-size: 13px;
     }
 
-    nav a { color: var(--faint); }
+    nav a { color: var(--muted); }
 
-    .slide-note {
-      margin-top: auto;
-      color: #aaa;
-      font-size: 12px;
+    main {
+      min-width: 0;
     }
-
-    .slides {
-      height: calc(100vh - 72px);
-      overflow-y: auto;
-      scroll-snap-type: y proximity;
-      padding-right: 10px;
-      scrollbar-width: thin;
-    }
-
-    .slides::-webkit-scrollbar { width: 7px; }
-    .slides::-webkit-scrollbar-thumb { background: #d0d0d0; border-radius: 999px; }
-    .slides::-webkit-scrollbar-track { background: transparent; }
 
     section {
-      scroll-snap-align: start;
-      padding-bottom: 24px;
+      padding-bottom: 30px;
       margin-bottom: 28px;
       border-bottom: 1px solid var(--line);
     }
 
-    section:last-of-type { border-bottom: 0; }
+    section:last-of-type { border-bottom: 0; margin-bottom: 0; }
 
     h2 {
-      margin: 0 0 16px;
+      display: inline-block;
+      margin: 0 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #222;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 21px;
-      line-height: 1.15;
-      font-weight: 600;
-      letter-spacing: -0.01em;
+      font-size: 23px;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -0.015em;
     }
 
-    .profile p {
+    .about p {
       margin: 0 0 12px;
-      max-width: 680px;
-      color: #444;
+      max-width: 690px;
+      color: var(--body);
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .keywords {
-      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .keyword {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background: #f4f4f4;
       color: #555;
-      font-size: 13px;
-      line-height: 1.6;
+      font-size: 12px;
+      line-height: 1.25;
+      white-space: nowrap;
     }
 
     .entry {
       display: grid;
-      grid-template-columns: 120px minmax(0, 1fr);
+      grid-template-columns: 125px minmax(0, 1fr);
       column-gap: 18px;
-      padding: 11px 0;
+      padding: 13px 0;
       border-top: 1px solid #f0f0f0;
+      align-items: start;
     }
 
-    .entry:first-of-type { border-top: 0; padding-top: 0; }
+    .entry:first-of-type { padding-top: 0; border-top: 0; }
 
     .date {
-      color: var(--faint);
+      color: var(--muted);
       font-size: 12px;
-      line-height: 1.45;
+      line-height: 1.4;
       white-space: nowrap;
     }
 
     .title {
       margin: 0;
+      color: #2b2b2b;
       font-size: 14px;
       line-height: 1.35;
-      font-weight: 600;
+      font-weight: 650;
+      letter-spacing: -0.005em;
     }
 
     .sub {
-      margin: 1px 0 3px;
+      margin: 1px 0 4px;
       color: var(--link);
       font-size: 13px;
       line-height: 1.35;
@@ -188,7 +188,7 @@
 
     .desc {
       margin: 0;
-      color: #555;
+      color: var(--body);
       font-size: 13px;
       line-height: 1.5;
     }
@@ -196,20 +196,23 @@
     .build-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px 20px;
+      gap: 16px 20px;
     }
 
-    .build-item {
-      border-top: 1px solid #f0f0f0;
-      padding-top: 10px;
+    .build-card {
+      min-height: 104px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
     }
 
-    .build-item .title { margin-bottom: 4px; }
+    .build-card .title { margin-bottom: 6px; }
 
     footer {
-      color: var(--faint);
+      padding-top: 8px;
+      color: var(--muted);
       font-size: 12px;
-      padding-top: 10px;
     }
 
     @media (max-width: 860px) {
@@ -217,28 +220,29 @@
         display: block;
         padding: 28px 22px 44px;
       }
+
       .sidebar {
         position: static;
-        height: auto;
-        margin-bottom: 30px;
+        min-height: auto;
+        margin-bottom: 32px;
       }
-      .photo { width: 132px; height: 132px; }
+
+      .photo {
+        width: 132px;
+        height: 132px;
+      }
+
       nav {
         display: flex;
         flex-wrap: wrap;
         gap: 8px 16px;
       }
-      .slide-note { display: none; }
-      .slides {
-        height: auto;
-        overflow: visible;
-        padding-right: 0;
-        scroll-snap-type: none;
-      }
+
       .entry {
         grid-template-columns: 1fr;
         row-gap: 3px;
       }
+
       .date { white-space: normal; }
       .build-grid { grid-template-columns: 1fr; }
     }
@@ -260,21 +264,26 @@
       </div>
 
       <nav aria-label="Primary navigation">
-        <a href="#profile">Profile</a>
+        <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#experience">Experience</a>
         <a href="#build">What I Build</a>
       </nav>
-
-      <p class="slide-note">Scroll the right panel</p>
     </aside>
 
-    <main class="slides">
-      <section id="profile" class="profile">
-        <h2>Profile</h2>
-        <p>I am a University of Chicago M.S. Computer Science candidate with a strong foundation in ML engineering, distributed systems, data science, and multi-agent systems.</p>
-        <p>My work spans production AI systems, LLM workflows, scalable data platforms, and decision-intelligence tools across Alibaba, L'Oréal, Trina Solar, and research labs, with experience on 10M+ multimodal records, 2M+ time-series records, and systems contributing $8M+ in annual savings.</p>
-        <div class="keywords">ML Engineering · LLM · Multi-Agent Systems · Agent Evaluation · Human-in-the-Loop AI · Data Infrastructure · GPU-aware ML Infrastructure</div>
+    <main>
+      <section id="about" class="about">
+        <h2>About</h2>
+        <p>I am a University of Chicago M.S. Computer Science candidate working at the intersection of ML engineering, distributed systems, data science, and multi-agent research.</p>
+        <p>I build LLM workflows, scalable data infrastructure, evaluation systems, and decision-intelligence tools, with experience on 10M+ multimodal records, 2M+ time-series records, human-in-the-loop AI systems, and production systems contributing $8M+ in annual savings.</p>
+        <div class="keywords" aria-label="Research and engineering keywords">
+          <span class="keyword">LLM</span>
+          <span class="keyword">Multi-Agent Systems</span>
+          <span class="keyword">ML Evaluation</span>
+          <span class="keyword">Human-AI Interaction</span>
+          <span class="keyword">Data Infrastructure</span>
+          <span class="keyword">GPU-aware ML Infrastructure</span>
+        </div>
       </section>
 
       <section id="research">
@@ -282,9 +291,9 @@
         <article class="entry">
           <div class="date">2026 – Present</div>
           <div>
-            <p class="title">Multi-Agent Long-Horizon AI Research</p>
+            <p class="title">Multi-Agent Long-Horizon AI Infrastructure</p>
             <p class="sub">UChicago Data Science Institute · Prof. Chenhao Tan</p>
-            <p class="desc">Building benchmarking, data, memory/context management, multi-agent communication, trajectory visualization, and human-in-the-loop annotation infrastructure for evaluating long-horizon AI workflows.</p>
+            <p class="desc">Building benchmarking, data/memory and context management, multi-agent communication traces, trajectory visualization, and human-in-the-loop annotation for long-horizon AI workflows.</p>
           </div>
         </article>
         <article class="entry">
@@ -296,19 +305,19 @@
           </div>
         </article>
         <article class="entry">
-          <div class="date">2023</div>
-          <div>
-            <p class="title">Medical Image Classification and Interpretability</p>
-            <p class="sub">NTU Business AI Lab · Dr. Teoh Teik Toe</p>
-            <p class="desc">Developed CNN-based breast-cancer detection and interpretability dashboards, achieving 0.921 precision.</p>
-          </div>
-        </article>
-        <article class="entry">
           <div class="date">2024</div>
           <div>
             <p class="title">Explainable AI for Energy Forecasting</p>
             <p class="sub">EIECT 2024</p>
             <p class="desc">Built energy-consumption forecasting models with SHAP explanations to improve reliability, interpretability, and governance.</p>
+          </div>
+        </article>
+        <article class="entry">
+          <div class="date">2023</div>
+          <div>
+            <p class="title">Medical Image Classification and Interpretability</p>
+            <p class="sub">NTU Business AI Lab · Dr. Teoh Teik Toe</p>
+            <p class="desc">Developed CNN-based breast-cancer detection and interpretability dashboards, achieving 0.921 precision.</p>
           </div>
         </article>
       </section>
@@ -320,7 +329,7 @@
           <div>
             <p class="title">Data Scientist</p>
             <p class="sub">Trina Solar</p>
-            <p class="desc">Built forecasting, optimization, and agentic decision workflows for supply-chain and energy operations, supporting $8M+ in annual cost savings.</p>
+            <p class="desc">Built forecasting, optimization, and LLM-based decision workflows for supply-chain and energy operations, supporting $8M+ in annual savings.</p>
           </div>
         </article>
         <article class="entry">
@@ -344,7 +353,7 @@
           <div>
             <p class="title">Product Manager</p>
             <p class="sub">Alibaba</p>
-            <p class="desc">Managed Alibaba Tianchi AI platform features across datasets, prototyping, model deployment, and developer experience.</p>
+            <p class="desc">Managed AI platform features across datasets, prototyping, model deployment, and developer experience.</p>
           </div>
         </article>
       </section>
@@ -352,19 +361,19 @@
       <section id="build">
         <h2>What I Build</h2>
         <div class="build-grid">
-          <article class="build-item">
-            <p class="title">Multi-Agent Research Infrastructure</p>
-            <p class="desc">Benchmarking, memory/context management, communication traces, trajectory visualization, and human-in-the-loop evaluation.</p>
+          <article class="build-card">
+            <p class="title">Multi-Agent Academic Paper Pipeline</p>
+            <p class="desc">Research-data pipeline for paper metadata, extraction, structured artifacts, and evaluation-ready reports.</p>
           </article>
-          <article class="build-item">
+          <article class="build-card">
             <p class="title">AI Agent Safety Evaluation</p>
             <p class="desc">Reproducible workflows for tracing multi-step tool-use failures from prompts to unsafe actions.</p>
           </article>
-          <article class="build-item">
+          <article class="build-card">
             <p class="title">GPU-aware ML Infrastructure</p>
-            <p class="desc">C++/CUDA and ONNX-based inference pipelines with profiling, batching, parallel loading, and reproducible artifacts.</p>
+            <p class="desc">C++/CUDA and ONNX inference pipelines with profiling, batching, parallel loading, and reproducible artifacts.</p>
           </article>
-          <article class="build-item">
+          <article class="build-card">
             <p class="title">Calibrated Sports Forecasting</p>
             <p class="desc">Probability models evaluated with calibration, Brier score, log loss, and reliability analysis.</p>
           </article>
