@@ -1,6 +1,277 @@
 theme: jekyll-theme-minimal
 title: Qianqian (Bella) He
-description: Agentic AI researcher and ML systems engineer focused on benchmarking, AI safety, data infrastructure,
-  and high-performance computing.
+description: Argonne National Laboratory research assistant and UChicago AI/ML researcher working on
+  agentic RTL optimization, energy-aware software-hardware co-design, agent safety, and ML systems.
 url: https://belsguidetotech.github.io
 baseurl: ''
+
+# All website content lives here. The older _data files are retained but no longer used by index.html.
+
+# Profile content
+profile:
+  name: Qianqian He
+  display_name: Qianqian (Bella) He
+  headline: AI/ML Researcher · Agentic AI · Hardware-Aware ML Systems
+  education:
+    degree: M.S. Computer Science
+    institution: University of Chicago
+  intro: I build AI systems that can reason, recover, and run efficiently. At Argonne National Laboratory,
+    I research energy-aware RTL optimization with agent-driven EDA workflows and energy prediction for
+    software-hardware co-design. At UChicago's Data Science Institute, I work on evaluation and safety
+    for long-horizon AI agents.
+  systems_intro: My work connects agentic AI, hardware-aware ML, GPU optimization, and dependable
+    infrastructure. Previously, I developed production ML and decision systems at Trina Solar,
+    L'Oréal, and Alibaba, contributing to more than $8M in annual cost savings.
+  research_interests:
+  - Agentic AI
+  - Agent Evaluation & Safety
+  - RTL / EDA Optimization
+  - Energy-Aware Co-Design
+  - GPU & ML Systems
+  - HPC
+  links:
+  - label: Email
+    url: mailto:bellahe@uchicago.edu
+    new_tab: false
+  - label: GitHub
+    url: https://github.com/belsguidetotech
+    new_tab: true
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/bella-h-63b15a2a8/
+    new_tab: true
+  - label: CV
+    url: assets/QianqianHe_CV.pdf
+    new_tab: true
+  - label: Blog
+    url: ''
+    new_tab: true
+    note: Public Notion blog — add URL when ready
+  experience:
+  - date: Sep 2026 – Present
+    title: Research Assistant
+    company: Argonne National Laboratory
+    description: Developing an energy-aware RTL optimization framework with Academy-based agents,
+      automated synthesis, functional verification, and power-performance-area evaluation. Also building
+      energy demand prediction and evaluation for BIA software-hardware co-design research.
+    topics:
+    - Agentic EDA
+    - RTL Optimization
+    - Synthesis & Verification
+    - Energy Modeling
+    - Hardware-Software Co-Design
+  - date: 2026 – Present
+    title: Research Intern
+    company: University of Chicago Data Science Institute
+    description: Built QIAO-Bench for state-action prediction and recovery evaluation in long-horizon agents,
+      and TraceGuard for provenance-aware trajectory analysis, unsafe transition localization, and
+      intervention evaluation.
+    topics:
+    - Agentic AI
+    - Benchmarking
+    - AI Safety
+    - Trajectory Analysis
+    - Data Infrastructure
+  - date: 2024 – 2025
+    title: Data Scientist
+    company: Trina Solar
+    description: Built forecasting, optimization, and LLM-based decision workflows for supply-chain and
+      energy operations, supporting $8M+ in annual savings.
+    topics:
+    - Machine Learning
+    - Forecasting
+    - LLMs
+    - Decision Systems
+  - date: 2022 – 2023
+    title: Data Analytics & Governance Manager
+    company: L'Oréal
+    description: Worked across analytics, data governance, recommendation, and GenAI workflows over large
+      multimodal datasets, with an emphasis on reliable data foundations and cross-functional decision support.
+    topics:
+    - Data Science
+    - Data Governance
+    - Recommendation
+    - Data Infrastructure
+  - date: 2021 – 2022
+    title: Product Manager
+    company: AISHU Technology
+    description: Led AIOps platform work for anomaly detection, failure prediction, infrastructure monitoring,
+      root-cause analysis, and operational analytics.
+    topics:
+    - Product Management
+    - AIOps
+    - ML Systems
+    - Observability
+  - date: 2020 – 2021
+    title: Product Manager
+    company: Alibaba
+    description: Managed AI platform features spanning datasets, prototyping, model deployment, developer
+      workflows, and product growth.
+    topics:
+    - Product Management
+    - AI Platforms
+    - Big Data
+    - Developer Experience
+
+# Research content
+research:
+  section_title: Selected Research
+  items:
+  - date: 2026 – Present
+    title: Energy-Aware RTL Optimization with Agentic EDA
+    subtitle: Argonne National Laboratory · Software-Hardware Co-Design
+    summary: Building an agent-driven RTL optimization framework that iterates through synthesis,
+      functional verification, and power-performance-area evaluation to explore energy-efficient
+      hardware designs while preserving correctness.
+    topics:
+    - RTL
+    - EDA Agents
+    - PPA Evaluation
+    - Functional Verification
+  - date: 2026 – Present
+    title: Energy Demand Prediction for BIA
+    subtitle: Argonne National Laboratory · Co-Design Evaluation
+    summary: Developing energy-demand prediction and evaluation methods for the BIA research project,
+      connecting energy modeling with software-hardware co-design decisions.
+    topics:
+    - Energy Forecasting
+    - Co-Design
+    - Evaluation
+  - date: '2026'
+    title: 'QIAO-Bench: Predictive World Models for Long-Horizon Agents'
+    subtitle: WM@Booth Workshop · Poster
+    summary: A JEPA-based state-action benchmark for long-horizon agent decisions and recovery planning.
+      The evaluation reached 93.8% recovery-state correctness and 100% rollback correctness in the
+      recovery setting described in my research CV.
+    topics:
+    - Agentic AI
+    - Benchmarking
+    - Trajectory Analysis
+    - World Models
+    - Prediction
+    paper_url: https://github.com/belsguidetotech/QIAO-Bench/blob/main/QIAO-Bench.pdf
+    code_url: https://github.com/belsguidetotech/QIAO-Bench
+  - date: 2026 – Present
+    title: Long-Horizon Agent Evaluation & Data Infrastructure
+    subtitle: University of Chicago · Chicago Human + AI Lab
+    summary: Building data, annotation, trajectory-analysis, evaluation, and context infrastructure for
+      long-horizon research agents, with a focus on understanding where decisions change the course of an
+      agent run and how errors propagate over time.
+    topics:
+    - Agent Evaluation
+    - Trajectory Data
+    - Data Infrastructure
+    - Human-in-the-Loop
+  - date: 2026 – Present
+    title: RecoverFlow
+    subtitle: Failure Detection & Recovery for Long-Horizon Agents
+    summary: Studies how failures emerge and propagate across agent trajectories, with the goal of detecting
+      critical failure points early and selecting recovery actions before downstream errors compound.
+    topics:
+    - Agent Safety
+    - Failure Detection
+    - Recovery
+    - Monitoring
+  - date: 2026 – Present
+    title: TraceGuard
+    subtitle: Provenance-Aware Agent Safety Evaluation · UChicago DSI
+    summary: Analyzes agent trajectories to localize unsafe transitions, trace their provenance,
+      and evaluate interventions. Increased verified attack discovery from 60% to 100% at a matched
+      search budget in the reported evaluation.
+    topics:
+    - AI Safety
+    - Trajectory Analysis
+    - Red-Teaming
+    - Intervention
+  - date: '2024'
+    title: Explainable AI for Energy Forecasting
+    subtitle: EIECT 2024
+    summary: Built energy-consumption forecasting models with SHAP explanations to improve reliability,
+      interpretability, and governance.
+    topics:
+    - Forecasting
+    - Explainable AI
+    - Energy
+  - date: '2023'
+    title: Medical Image Classification & Interpretability
+    subtitle: NTU Business AI Lab
+    summary: Developed CNN-based breast-cancer detection and interpretability dashboards, including data
+      augmentation and model-analysis workflows.
+    topics:
+    - Computer Vision
+    - Medical AI
+    - Interpretability
+
+# Events content
+events:
+  section_title: Learn & Connect
+  intro: I learn through research workshops, developer communities, and conversations with people building
+    AI systems in practice. I use these experiences to sharpen the questions I work on across agentic AI,
+    benchmarking, safety, and ML systems.
+  items:
+  - date: Sep 2026
+    event: WM@Booth (Poster Presenter · QIAO-Bench)
+    location: Chicago Booth
+    takeaway: Exploring when predictive representations of long-horizon trajectories become useful world
+      models for planning, monitoring, and control.
+    impact: Using the workshop to refine the path from one-step prediction toward multi-step prediction,
+      counterfactual reasoning, recovery, and closed-loop agent control.
+  - date: Aug 2026
+    event: Agentic AI Summit
+    location: UC Berkeley
+    takeaway: 'Long-horizon agents need more than capability: evaluation, observability, reliability, and
+      safety become increasingly important as agents move into real workflows.'
+    impact: Strengthened my focus on trajectory analysis, benchmarking, failure detection, recovery, and
+      intervention.
+  - date: '2026'
+    event: NVIDIA GTC
+    location: San Jose
+    takeaway: 'Agentic AI is the new operating system. Model capability increasingly depends on the systems underneath it: GPUs, efficient inference,
+      distributed infrastructure, and reliable data pipelines.'
+    impact: Deepened my interest in GPU-aware ML infrastructure, high-performance computing, efficient serving,
+      and scalable ML systems.
+
+# Builds content
+builds:
+  section_title: What I Build
+  # Add a public demo or repository URL to an item's url field when it is ready.
+  # Argonne source links should only be published with approval.
+  tracks:
+  - title: Energy-Aware RTL & Co-Design
+    description: Research at Argonne National Laboratory on efficient hardware and energy-aware systems.
+    items:
+    - name: Agent-Driven RTL Optimization
+      focus: EDA agents, automated synthesis, verification, and PPA evaluation · Demo coming soon
+      url: ''
+    - name: BIA Energy Demand Prediction
+      focus: Energy prediction and software-hardware co-design evaluation · Demo coming soon
+      url: ''
+  - title: Agent Benchmarking & Safety
+    description: Understanding, predicting, and improving the reliability of long-horizon AI agents.
+    items:
+    - name: QIAO-Bench
+      focus: JEPA-based trajectory prediction and recovery evaluation
+      url: https://github.com/belsguidetotech/QIAO-Bench
+    - name: TraceGuard
+      focus: Unsafe transition localization and provenance-aware safety evaluation · Demo coming soon
+      url: ''
+    - name: RecoverFlow
+      focus: Failure detection and recovery for long-horizon agents · Demo coming soon
+      url: ''
+  - title: ML Systems & Agent Security
+    description: Reproducible, efficient AI evaluation and inference infrastructure.
+    items:
+    - name: GPU Inference Optimization
+      focus: ONNX, CUDA-aware profiling, batching, and memory efficiency · Demo coming soon
+      url: ''
+    - name: Agent Security Red-Teaming
+      focus: Multi-step tool attacks, trace analysis, and reproducible failures · Demo coming soon
+      url: ''
+  - title: Applied Agentic & Distributed Systems
+    description: Forecasting, control, and service orchestration for real-world systems.
+    items:
+    - name: Distributed Energy Simulation
+      focus: FastAPI, Docker, fault-tolerant coordination, and agent control · Demo coming soon
+      url: ''
+    - name: Agentic Portfolio & Market Engine
+      focus: Event-driven forecasting, risk evaluation, and portfolio workflows · Demo coming soon
+      url: ''
